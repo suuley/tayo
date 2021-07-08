@@ -1,0 +1,14 @@
+mongoose.model('First').findOne({ _id: id }, function(err, result) {
+
+    let swap = new (mongoose.model('Second'))(result)
+    /* you could set a new id
+    swap._id = mongoose.Types.ObjectId()
+    swap.isNew = true
+    */
+
+    result.remove()
+    swap.save()
+
+    // swap is now in a better place
+
+})

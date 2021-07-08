@@ -1,0 +1,20 @@
+       {{#if user.isAdmin}}
+
+        {{#each posts}}
+
+
+            <div class="card mb-4">
+                <img class="card-img-top" src="../../../uploads" alt="Card image cap">
+                <div class="card-body">
+                    <h2 class="card-title">{{title}}</h2>
+                    <p class="card-text">{{author}}</p>
+                    <a href="#" class="btn btn-primary">Read More &rarr;</a>    
+                </div>                
+                <div class="card-footer text-muted">
+                    Posted on {{creationDate}} by
+                    <a href="#">Admin</a>
+                </div>
+            </div>
+
+        {{/each}}
+        {{/if }}

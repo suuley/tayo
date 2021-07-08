@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="container">
+        <div class="col-md-10">
+            <table class="table table-bordered text-white">
+                <thead class="bg-dark text-center">
+                    <tr>
+                        <th>id</th>
+                        <th>Publisher</th>
+                        <th>Approve Comments</th>
+                        <th>Date</th>
+                        <th>Comment Body</th>
+                    </tr>
+
+                </thead>
+                <tbody class="text-dark">
+                {{#each comments}}
+
+                <tr>
+                        <td>{{_id}}</td>
+                        <td>{{author}}</td>
+                        <td>{{commentApproved}}</td>
+                        <td>{{date}}</td>
+                        <td>{{body}}</td>
+                    </tr>
+                
+                  {{/each}}
+                </tbody>
+                
+
+            </table>
+
+        </div>
+
+
+    </div>
+</div>

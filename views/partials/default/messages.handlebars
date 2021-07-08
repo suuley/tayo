@@ -1,0 +1,14 @@
+<div class="container">
+
+    {{#if success_msg}}
+       <div class="alert alert-success auto-hide"><strong>{{success_msg}}</strong></div>
+    {{/if}}
+    {{#if error_message}}
+       <div class="alert alert-danger auto-hide"><strong>{{error_msg}}</strong></div>
+    {{/if}}
+    {{#if error}}
+       <div class="alert alert-danger auto-hide"><strong>{{error}}</strong></div>
+    {{/if}}
+
+</div>
+

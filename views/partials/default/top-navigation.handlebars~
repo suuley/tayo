@@ -1,0 +1,32 @@
+  <header class="inner">
+    <h2><a href="/"><i class="fas fa-code"></i>
+        SomWire</a></h2>
+     <nav>
+      <ul>
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/Articles">Articles</a>
+        </li>
+       {{#if user}}
+        <li>
+          <a href="/articles/add">add Article</a>
+        </li> 
+        <li>
+          <a href="/users/logout">Logout</a>
+        </li>
+        {{else}}
+          <li>
+          <a href="/users/register">Register</a>
+        </li>
+          <li>
+          <a href="/users/verify"></a>
+        </li>
+          <li>
+          <a href="/login">Login</a>
+        </li>
+        {{/if}}
+       </ul>
+    </nav>
+  </header>

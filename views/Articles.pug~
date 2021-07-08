@@ -1,0 +1,39 @@
+extends layout
+
+block content
+  br
+  each article, i in articles
+    .row
+      .leftcolumn
+        .card
+          h2= article.title
+          h5 Waxa kuu diyariyey #{article.author}
+          .fakeimg1
+            img(src='\\uploads/'+article.articleimage)
+          p Qoraal kooban..
+          p= article.body 
+            
+          br
+          if user
+            if user.name ==article.author
+              a.btn.btn-info(href='/articles/edit/'+article._id) Edit 
+              a.btn.btn-danger.delete-article(href='#',data-id=article._id) Delete
+    
+      .rightcolumn
+        .card
+          h2 Yaan Ahay
+          .fakeimg(style='height:100px;') Masawir
+          p Some text about me in culpa qui officia deserunt mollit anim..
+        .card
+          h3 qoraalada aqriste badan
+          .fakeimg Masawir
+          br
+          .fakeimg Masawir
+          br
+          .fakeimg Masawir
+        .card
+          h3 Igalasoco Halkan
+          p Qoraal kaloo kooban..
+    
+
+

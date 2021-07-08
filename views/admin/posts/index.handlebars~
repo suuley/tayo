@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="alert alert-secondary text-center">
+        <h1>ALL POSTS</h1>    
+    </div>
+        
+    <table class="table table-bordered">
+        <thead class="bg-dark text-center">
+        <tr class="text-white">          
+            <th>Title</th>
+            <th>Author</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody class="text-center">
+        {{#if user}}    
+        {{#each posts}}
+            <tr>               
+                <td>{{title}}</td>
+                <td>{{author}}</td>
+                <td class="d-flex">
+                    <a href="/admin/posts/edit_post/{{_id}}" class="btn btn-sm btn-warning mr-2">Edit Post</a>
+                    <a href="/admin/posts/{{_id}}" class="btn btn-sm btn-info mr-2">Publish Post</a>
+
+                    <form action="/admin/posts/delete/{{id}}?newMethod=DELETE" method="post">
+                        <button class="btn btn-sm btn-danger mr-2 " type="submit">Delete Post</button>
+                    </form><br>
+                    
+
+                    
+                </td>
+            </tr>    
+        {{/each}}
+        {{/if}}
+        </tbody>
+    </table>
+    
+    
+</div>

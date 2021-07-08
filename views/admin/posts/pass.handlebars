@@ -1,0 +1,58 @@
+
+    <div class="box container container-fluid">
+        <div class="jumbotron">
+            <div class="card ">
+                <div class="card-header">
+                    <h3>Hayadda Tayodhowrka</h3> 
+                </div>
+                <div class="card-body w-100 ">
+                  <h5 class="card-title">Badeecoyinka la Fasaxay</h5>
+                 
+               <br>
+               <div class="tableFixHead">
+                  <table class="table table-fixed table-fluid table-hover table-bordered" >
+                    <thead>
+                      <tr>
+                        <th scope="col">contaner-No</th>
+                        <th scope="col">dhumuc</th>
+                        <th scope="col">agent</th>
+                        <th scope="col">ship-name</th>
+                        <th scope="col">vogane-No</th>
+                        <th scope="col">noca-badeeco</th>
+                        <th scope="col">date</th>
+                        <th scope="col">cert-No</th>
+                        <th scope="col">cert-date</th>
+                        <th scope="col">Delivery-T</th>
+                        <th scope="col">action</th>
+
+                      </tr>
+                    </thead>
+
+                    <tbody>
+                    {{#each articles}}
+                      <tr>
+                        <td>{{container}}</td>
+                        <td>{{dhumuc}}</td>
+                        <td>{{agent}}</td>
+                        <td>{{ship}}</td>
+                        <td>{{vogane}}</td>
+                        <td>{{nooca}}</td>
+                        <td>{{date}}</td>
+                        <td>{{certN}}</td>
+                        <td>{{certD}}</td>
+                        <td>{{delivery}}</td>                        
+                        <td class="d-flex flex-right">
+                          <a href="#" class="badge badge-sm badge-success mr-2">Baxdey</a>
+                          
+                        </td>
+                    {{/each}}
+                      </tr>
+                    </tbody>
+                  </table>
+               </div>
+                 
+                </div>
+              </div>
+        </div>
+    </div>
+

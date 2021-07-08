@@ -1,0 +1,61 @@
+<div class="container">
+    {{#if success_msg}}
+       <div class="alert alert-success"><strong>{{msg}}</strong></div>
+    {{/if}}
+   
+  </div>
+<div class="container"> 
+  <div class="row">
+    <div class="leftcolumn">
+      <div class="card mb-20">
+          
+        <h1>{{article.title}}</h1>
+        <h5>Waxa la diyariyey {{article.date}}</h5>
+        <div class="fakeimg1"><img src="../../uploads/{{article.articleimage}}" width="750" height="400"></div>
+        <br>
+        <p class="mt-5">Container Number: {{article.container}}</p>
+     
+        <p>Ship Name =>  {{{article.ship}}} </p>
+        <p>Cert Number => {{article.certN}}</p>
+        
+        <hr> 
+                  
+      </div>
+     
+    </div>
+    
+  </div>
+</div>
+    <div class="leftcolumn">
+
+          <!-- Comments Form -->
+          <div class="card mb-20">
+            <h5 class="card-header">Sababta Xayiraadda ama Rejekshionka hoos ku qor</h5>
+            <div class="card-body">
+              <form action="/Articles/article/{{article._id}}" method="post">
+                <div class="form-group">
+                  <textarea class="form-control" name="body" rows="3"></textarea>
+                  <input type="hidden" name="id" value="{{article._id}}">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Single Comment -->
+          {{#each article.comments}}
+          <div class="card mb-20">
+            <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+            <div class="media-body">
+              <h5 class="mt-0">Qoruhu waa :{{author}}</h5>
+              {{body}}
+            </div>
+          </div>
+          {{/each}}
+          <!-- Comment with nested comments -->
+         
+         </div>
+    </div>
+    
+   
+ 

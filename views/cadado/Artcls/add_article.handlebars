@@ -1,0 +1,23 @@
+ <div class="container">
+      <h1>Add Article</h1>
+        
+      <form method="POST" action="/articles/add" enctype="multipart/form-data">
+         <div class="form-group"><label>Title:</label><input class="form-control" name="title" type="text"></div>
+          <textarea id="summernote" name="body"></textarea>
+         <br>
+         <div class="form-group"><input type="file" accept="image/*" name="articleimage"><br>
+         <input class="btn btn-primary"
+               type="submit" value="Submit"></div>
+      </form>
+      <script>
+      $('textarea').summernote();
+    
+    </script>
+   </div>
+  
+
+
+ 
+
+
+

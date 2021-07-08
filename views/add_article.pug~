@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  .container
+    h1 #{title}
+    form(method='POST', action='/articles/add', enctype="multipart/form-data")
+      #form-group
+        label Title:
+        input.form-control(name='title', type='text')
+      #form-group
+        label Body:
+        textarea.form-control(name='body')
+        br
+      #form-group
+        input(type='file', accept='image/*', name='articleimage')
+        br
+        input.btn.btn-primary(type='submit',value='Submit')
+  

@@ -1,0 +1,49 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    link(href='/css/animate.css', rel='stylesheet', type='text/css')
+    link(rel='stylesheet', href='/fontawesome/css/all.css')
+    link(href='/css/styl.css', rel='stylesheet')
+    link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.css')
+    link(rel='stylesheet', href='/css/style.css')
+    link(rel='stylesheet', href='/stylina.css')
+    title SomWire
+  body
+    header.inner
+      h2
+        a(href='/')
+          i.fas.fa-code
+          |         SomWire
+      ul.nav.navbar-nav
+        li
+          a(href='/') Home
+        li
+          a(href='/Articles') Articles
+        if user
+          li
+            a(href='/articles/add') Add Article
+      ul.nav.navbar-nav.navbar-right
+        if user
+          li 
+            a(href='/users/logout') Logout
+        else
+          li
+            a(href='/users/register') Register
+          li
+            a(href='/users/verify')
+          li
+            a(href='/users/login') Login
+    
+    block content
+    br
+    hr
+    footer.container
+      p SwDigital &copy; 2019
+  script(src='/bower_components/jquery/dist/jquery.js')  
+  script(src='/bower_components/bootstrap/dist/js/bootstrap.js')
+  script(src='/summernote-bs4.js')
+  link(href='/summernote-bs4.css', rel='stylesheet')
+ 

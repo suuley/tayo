@@ -1,0 +1,5 @@
+{{#if user.isAdmin}}
+<div class="container text-center ">
+  <h1 class="">Welcome To Admin Dashboard</h1>
+</div>
+{{/if }}

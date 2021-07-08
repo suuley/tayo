@@ -1,0 +1,38 @@
+const Article = require('../models/article');
+const User = require('../models/user');
+const multer = require('multer');
+var striptags = require('striptags');
+var path        = require('path');
+
+const storage = multer.diskStorage({
+  destination: function(req, file, cb) {
+    cb(null, 'uploads');
+    },
+  filename: function(req, file, cb) {
+    cb(null, file.originalname);
+  } 
+});
+const upload = multer({storage: storage})
+
+module.exports = {
+  
+      getArticles: function(req, res){
+  Article.find({}, function(err, articles){
+    if(err){
+      console.log(err);
+    } else {
+      res.render('default/Articles/index', {
+        title:'Qoraalo',
+        articles: articles
+      });
+    }
+  });
+},
+
+    addArticle: function(req, res, next){
+  res.render('add_article', {
+    title:'Add Article'
+  });
+}
+    
+};

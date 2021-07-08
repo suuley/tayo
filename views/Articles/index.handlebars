@@ -1,0 +1,131 @@
+<div class="modal fade rounded" id="geli" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" style="overflow-y: initial !important">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Diwangeli Dokumenti</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" style="height: 70vh; overflow-y: auto;" >
+
+
+        <form method="POST" action="/articles/add" enctype="multipart/form-data">
+          <div class="mb-3">
+            <select id="status" name="status">
+              <option value="unregistered"selected >Unregistered</option>
+              <option value="inspection">inspection</option>
+              <option value="pass">Pass</option>
+              <option value="hold">Hold</option>
+              <option value="fail">Fail</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">container</label>
+            <input type="text" class="form-control" id="status"  name="container" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">dhumuc</label>
+            <input type="text" class="form-control" id="dhumuc"  name="dhumuc" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">agent</label>
+            <input type="text" class="form-control" id="agent"  name="agent" aria-describedby="emailHelp">
+          </div><div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">ship</label>
+            <input type="text" class="form-control" id="ship"  name="ship"aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">vogane</label>
+            <input type="text" class="form-control" id="ship"  name="vogane" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">nooca</label>
+            <input type="text" class="form-control" id="nooca"  name="nooca"aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">date</label>
+            <input type="date" class="form-control" id="date"  name="date"aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">certN</label>
+            <input type="text" class="form-control" id="certN"  name="certN"aria-describedby="emailHelp">
+          </div>
+         
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">delivery</label>
+            <input type="text" class="form-control" id="certD"  name="delivery"aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3 form-group"><input type="file" accept="image/*" name="image">
+            <input class="btn btn-primary"type="submit" value="Submit">  
+          </div>
+    </form>
+
+      </div>
+      
+  </div>
+      <div class="modal-footer">
+       
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="box container container-fluid">
+        <div class="jumbotron">
+            <div class="card ">
+                <div class="card-header">
+                    <h2>Hayadda Tayodhowrka</h2> 
+                </div>
+                <div class="card-body w-100 ">
+                  <h5 class="card-title">Badeecoyinka la Diwangeliyey</h5>
+                  <div class="row">
+                    <div class="col-md-12 text-right">
+                      <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#geli" style="width: 200px; letter-spacing: 2px">DIWAANGELI</button>
+                    </div>
+                  </div>
+               <br>
+               <div  class="tableFixHead">
+                  <table class="table-fixed table-striped table-fluid table-hover table-bordered" >
+                    <thead style="position: sticky;top: 0">
+                      <tr>
+                        <th scope="col">contaner-No</th>
+                        <th scope="col">dhumuc</th>
+                        <th scope="col">agent</th>
+                        <th scope="col">ship-name</th>
+                        <th scope="col">vogane-No</th>
+                        <th scope="col">noca-badeeco</th>
+                        <th scope="col">date</th>
+                        <th scope="col">cert-No</th>
+                        <th scope="col">Delivery-T</th>
+                        <th scope="col">action</th>
+
+                      </tr>
+                    </thead>
+
+                    <tbody>
+                    {{#each articles}}
+                      <tr>
+                        <td>{{container}}</td>
+                        <td>{{dhumuc}}</td>
+                        <td>{{agent}}</td>
+                        <td>{{ship}}</td>
+                        <td>{{vogane}}</td>
+                        <td>{{nooca}}</td>
+                        <td>{{date}}</td>
+                        <td>{{certN}}</td>
+                        <td>{{certD}}</td>
+                        <td>{{delivery}}</td>                        
+                        <td class="d-flex flex-right"><a href="/articles/{{_id}}" class="badge badge-sm badge-warning mr-2">Inspection</a>
+                            <a href="/articles/article/{{_id}}" class="badge badge-sm badge-primary mr-2">open</a>
+                        </td>
+                    {{/each}}
+                      </tr>
+                    </tbody>
+                  </table>
+               </div>
+                 
+                </div>
+              </div>
+        </div>
+    </div>
+    
+

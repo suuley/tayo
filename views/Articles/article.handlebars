@@ -1,0 +1,60 @@
+<div class="container">
+    {{#if success_msg}}
+       <div class="alert alert-success"><strong>{{msg}}</strong></div>
+    {{/if}}
+   
+  </div>
+<div class="container"> 
+  <div class="row">
+    <div class="leftcolumn">
+      <div class="card mb-20">
+          
+        <h1></h1>
+        <p> hello mr/s {{article.magac}}</p>
+        <div class="fakeimg1"><img src="../../uploads/{{article.articleimage}}" width="750" height="400"></div>
+        <br>
+        <p class="mt-5">{{article.hooyo}}</p>
+     
+        <p>district =>  {{{article.deggan}}} </p>
+        <p>Dob => {{article.dhashay}}</p>
+        
+        <hr> 
+                  
+      </div>
+     
+    </div>
+    
+  </div>
+</div>
+    <div class="leftcolumn">
+
+          <!-- Comments Form -->
+          <div class="card mb-20">
+            <h5 class="card-header">Access Control Database</h5>
+            <div class="card-body">
+              <form action="/Articles/article/{{article._id}}" method="post">
+                <div class="form-group">
+                  <textarea class="form-control" name="body" rows="3"></textarea>
+                  <input type="hidden" name="id" value="{{article._id}}">
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- Single Comment -->
+          {{#each article.comments}}
+          <div class="card mb-20">
+            <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+            <div class="media-body">
+              <h5 class="mt-0">Qoruhu waa :{{author}}</h5>
+              {{body}}
+            </div>
+          </div>
+          {{/each}}
+          <!-- Comment with nested comments -->
+         
+         </div>
+    </div>
+    
+   
+ 

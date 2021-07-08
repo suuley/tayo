@@ -1,0 +1,41 @@
+  <div class="container">
+    <h1>Add Article</h1>
+    <form method="POST" action="/articles/add" enctype="multipart/form-data">
+      <div id="form-group"><label>Title:</label><input class="form-control" name="title" type="text"></div>
+      <div id="form-group"><textarea name="body"</textarea>
+
+         <div id="summernote">
+           
+        </div>
+    <script>
+      $(document).ready(function() {
+      $('#summernote').summernote({
+        placeholder: 'Hello bootstrap 4',
+        tabsize: 2,
+        height: 100
+      });
+        function sendFile(file, editor, welEditable) {
+            data = new FormData();
+            data.append("articleimage", file);
+            $.ajax({
+                data: data,
+                type: "POST",
+                url: "/articles/add",
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: function(url) {
+                    editor.insertImage(welEditable, url);
+                }
+            });
+        }
+      });
+    </script>
+      <div id="form-group"><input class="btn btn-primary"
+          type="submit" value="Submit"></div>
+    </form>
+  </div>
+ 
+
+
+

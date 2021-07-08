@@ -1,0 +1,99 @@
+const express = require('express');
+const router = express.Router();
+const adminUser = require('../config/custonFunction')
+
+let Post = require('../models/post');
+// User Model
+let User = require('../models/user');
+let Article = require('../models/article');
+
+
+
+router.all('/*', adminUser, (req, res, next) => {
+    
+  req.app.locals.layout = 'admin';
+  
+  next();
+});
+
+module.exports = {
+
+// Admin Routes
+
+   getAdmin: function(req, res){
+  res.render('admin/index');
+},
+
+
+
+// display all posts
+    getPosts: function(req, res){
+  Post.find({}, function(err, posts){
+    if(err){
+      console.log(err);
+    } else {
+      res.render('admin/posts/index', {posts: posts});
+    }
+  });
+},
+
+getEditPost: (req, res) => {
+  const id = req.params.id;
+
+  Post.findById(id)
+      .then(post => {
+       
+              res.render('admin/posts/edit_post', {post: post});
+
+});  
+},
+
+postEditPost: function(req, res, next){
+  let post = {};
+  post.title = req.body.title;
+  post.author = req.body.author;
+  post.body = req.body.body;
+  if (req.file){
+    post.articleimage = req.file.originalname;
+  } else {
+    {post.articleimage === post.articleimage};
+  }
+  
+
+  let query = {_id:req.params.id}
+
+  Post.update(query, post, function(err){
+    if(err){
+      console.log(err);
+      return;
+    } else {
+      req.flash('success', 'Post Updated');
+      res.render('admin/posts');
+
+    }
+  });
+},
+
+postMovePost: function(req, res){
+  Post.findById(req.params.id, function(err, post){
+   
+    console.log(post);
+    let article = new Article();
+    article.title = post.title;
+    article.author = post.author;
+    article.body = post.body;
+    article.articleimage = post.articleimage;
+
+
+    article.save();
+    post.remove();
+
+
+     
+     
+      res.render('admin/posts')
+
+    })
+  },
+
+}

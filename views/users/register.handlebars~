@@ -1,0 +1,25 @@
+<div class="container " id="register">
+   <section class="register" >
+       <h1 align="center">Register</h1>
+          {{#if errors}}
+          {{#each errors}}
+        <div class="alert alert-danger">
+            <strong>{{msg}}</strong></div>
+        {{/each}}
+      {{/if}}
+        <form method="POST" action="/register">
+            <div id="form-group"><label>Name:</label><input class="form-control" name="name" type="text"></div>
+            <div id="form-group"><label>Email:</label><input class="form-control" name="email" type="text"></div>
+            <div id="form-group"><label>Username:</label><input class="form-control" name="username" type="text"></div>
+            <div id="form-group"><label>Password:</label><input class="form-control" name="password" type="password">
+            </div>
+            <div id="form-group"><label>Confirm:</label><input class="form-control" name="password2" type="password">
+            </div><br><div><input class="btn btn-primary mb-5" type="submit" value="Submit"></div>
+        </form>
+        
+    </section>
+</div>
+
+
+
+

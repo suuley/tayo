@@ -1,0 +1,151 @@
+
+:root {
+  --primary-color: #568c9b;
+  --primary-hover-color: #64a5b7;
+  --bg-color: #333;
+  --box-shadow: 3px 4px 12px rgba(0, 0, 0, 0.7);
+}
+* {
+  box-sizing: border-box;
+}
+
+/* Add a gray background color with some padding */
+body {
+  font-family: Arial;
+  padding: 10px;
+  background: #fdfbfd;
+}
+
+header {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+}
+#register {
+    
+    width: 50%;
+    background-color:rgb(243, 238, 173);
+    margin-top: 20px !important;
+    box-shadow: var(--box-shadow);
+}
+
+#register h1{
+  align-items: center;
+}
+#form-group{
+   padding: 1rem 3rem;
+}
+#register .btn {
+       margin-bottom: 5px !important;
+}
+
+.text-center :any-link {
+  padding: 10px;
+  color: #568c9b;
+}
+
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  color: #e6f2ee;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--primary-color);
+}
+header nav ul {
+  display: flex;
+}
+
+header nav li {
+  margin: 0 1rem;
+}
+
+/* Header/Blog Title */
+header.inner {
+   background:#333;
+  border-bottom: 2px solid var(--primary-color);
+  position: relative;
+  box-shadow: var(--box-shadow);
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 75%;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  padding-left: 20px;
+}
+
+/* Fake image */
+
+.fakeimg1 img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  object-position: center;
+  padding: 20px;
+}
+.fakeimg1 {
+  background-color: #aaa;
+  width: 100%;
+}
+
+
+
+/* Add a card effect for articles */
+.card {
+   background-color:rgb(243, 238, 173);
+   padding: 20px;
+   margin-top: 20px;
+}
+
+.card p {
+   max-width: 80%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  color: #e6f2ee;
+  background: var(--bg-color);
+  border-bottom: 4px solid var(--primary-color);
+  margin-top: 20px;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+
+  .footer {   
+    width: 100%;
+    padding: 0;
+  }
+}

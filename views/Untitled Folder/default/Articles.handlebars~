@@ -1,0 +1,99 @@
+<div class="container"> 
+  <div class="row">
+    {{#if user}} 
+      {{#each articles}}
+    <div class="leftcolumn">
+        
+      <div class="card" mb-20>
+          
+        <h1>{{title}}</h1>
+        <h5>Waxa kuu diyariyey {{author}}</h5>
+        <div class="fakeimg1"><img src="uploads/{{articleimage}}"></div>
+        <br>
+        <p>Qoraal kooban..</p>
+        <p> {{{body}}} </p>
+        <br>
+        <div>
+          
+        </div>
+        
+           <a class="btn btn-info" href="/articles/edit/'+article._id">Edit </a>
+           <a class="btn btn-danger delete-article" href="#" data-id=article._id>Delete </a>
+      
+       
+      </div>
+     
+      
+    </div>
+    
+    <div class="rightcolumn">
+       
+      <div class="card">
+        <h2>Yaan Ahay</h2>
+        <div class="fakeimg" style="height:100px;">Masawir</div>
+        <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+      </div>
+      
+      <div class="card">
+        <h3>qoraalada aqriste badan</h3>
+        <div class="fakeimg">Masawir</div><br>
+        <div class="fakeimg">Masawir</div><br>
+        <div class="fakeimg">Masawir</div>
+      </div>
+      <div class="card">
+        <h3>Igalasoco Halkan</h3>
+        <p>Qoraal kaloo kooban..</p>
+       
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>
+  {{else}}
+<div class="container"> 
+  <div class="row"> 
+      {{#each articles}}
+    <div class="leftcolumn">
+        
+      <div class="card" mb-20>
+          
+        <h1>{{title}}</h1>
+        <h5>Waxa kuu diyariyey {{author}}</h5>
+        <div class="fakeimg1"><img src="uploads/{{articleimage}}"></div>
+        <br>
+        <p>Qoraal kooban..</p>
+        <p> {{{body}}} </p>
+        <br>
+        <div>
+           </div>
+      </div>
+     
+      
+    </div>
+    
+    <div class="rightcolumn">
+       
+      <div class="card">
+        <h2>Yaan Ahay</h2>
+        <div class="fakeimg" style="height:100px;">Masawir</div>
+        <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+      </div>
+      
+      <div class="card">
+        <h3>qoraalada aqriste badan</h3>
+        <div class="fakeimg">Masawir</div><br>
+        <div class="fakeimg">Masawir</div><br>
+        <div class="fakeimg">Masawir</div>
+      </div>
+      <div class="card">
+        <h3>Igalasoco Halkan</h3>
+        <p>Qoraal kaloo kooban..</p>
+       
+      </div>
+    </div>
+    {{/each}}
+    {{/if}}
+  </div>
+</div> 
+    
+

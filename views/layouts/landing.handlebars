@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="Kodinger">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>My Login Page</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="/vendor/login/css/my-login.css">
+	<style>
+	HTML {
+    height: 100%;
+}
+
+BODY {
+    min-height: 100%;
+    background-image: url("/img/.jpg");
+    background-image: url("/img/sea-3121435_1920.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.halfOpacity {
+	background-color: antiquewhite;
+  opacity: 0.6 !important;
+}
+.brando img {
+    margin-top: 100px;
+    margin-bottom: 10px;
+	 width: 100px;
+	 height: 100px;
+	 text-align: center;
+	   border-radius: 50%;
+}
+
+.footer {
+	background-color: black;
+	color: cornsilk;
+}
+</style>
+</head>
+
+<body class="my-login-page">
+    <div class="text-center">
+             {{>default/messages}}
+    </div>
+       <div class="brando text-center">
+			<img src="img/IMG-20210202-WA0000.jpg" alt="logo">
+		</div>
+	 <section class="container halfOpacity login mt-25 w-50" id="login">
+        <h1 align="center">Halkan ka gal applicationka</h1>
+        <form method="POST" action="/users/login">
+            <div id="form-group"><label>Magac:</label><input class="form-control" name="username" type="text"></div>
+            <div id="form-group"><label>Bassword:</label><input class="form-control" name="password" type="password">
+            <br><input class="btn btn-primary btn-lg btn-block" type="submit" value="Riix"></div>
+        </div>
+        </form>
+        <br>
+        
+    </section>
+
+	<script src="/vendor/jquery/jquery.min.js"></script>
+<script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="/vendor/login/js/my-login.js"></script>
+    <script>
+    $(document).ready(function () {
+        setTimeout(function () {
+            $('.auto-hide').slideUp(1000);
+        }, 2000);
+
+    });
+
+</script>
+</body>
+</html>
